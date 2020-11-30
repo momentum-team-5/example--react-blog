@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import Blog from './components/Blog'
 import { useLocalStorage } from './hooks'
+import Post from './components/Post'
 
 function App () {
   const [auth, setAuth] = useLocalStorage('blog_auth', null)
@@ -24,6 +25,9 @@ function App () {
         )}
 
         <Switch>
+          <Route path='/post/:id'>
+            <Post auth={auth} />
+          </Route>
           <Route path='/signup'>
             <Register
               auth={auth}

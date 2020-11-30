@@ -2,6 +2,8 @@ import axios from 'axios'
 import clsx from 'clsx'
 import { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { authPropType } from '../prop-types'
 
 export default function Register ({ auth, onRegister }) {
   const [username, setUsername] = useState('')
@@ -76,4 +78,9 @@ export default function Register ({ auth, onRegister }) {
       </form>
     </div>
   )
+}
+
+Register.propTypes = {
+  auth: authPropType,
+  onRegister: PropTypes.func.isRequired
 }

@@ -2,6 +2,8 @@ import axios from 'axios'
 import clsx from 'clsx'
 import { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { authPropType } from '../prop-types'
 
 export default function Login ({ auth, onLogin }) {
   const [username, setUsername] = useState('')
@@ -79,4 +81,9 @@ export default function Login ({ auth, onLogin }) {
       </form>
     </div>
   )
+}
+
+Login.propTypes = {
+  auth: authPropType,
+  onLogin: PropTypes.func.isRequired
 }
