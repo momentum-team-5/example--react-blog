@@ -41,6 +41,9 @@ export default function Post ({ auth }) {
       <p>
         {post.text}
       </p>
+      {post.tags && (
+        <p>Tags: {post.tags.join(', ')}</p>
+      )}
       <div>
         <button onClick={deletePost}>Delete this post</button>
       </div>

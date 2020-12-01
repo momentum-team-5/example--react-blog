@@ -30,6 +30,9 @@ export default function Blog ({ auth }) {
             </Link>
           </h2>
           <p>{post.text}</p>
+          {post.tags && (
+            <p>Tags: {post.tags.join(', ')}</p>
+          )}
           <p>Written by {post.user} on {post.updated}</p>
         </div>
       ))}
